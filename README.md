@@ -53,6 +53,19 @@ ansible-playbook ./site.yml -i inventory/test.yml
 
 
 3. Воспользуйтесь подготовленным (используется `docker`) или создайте собственное окружение для проведения дальнейших испытаний.
+
+Запустить контейнер с CentOS 7
+```
+docker run -dit --name centos7 pycontribs/centos:7 /bin/bash
+```
+
+Запустить контейнер с Ubuntu
+```
+docker run -dit --name ubuntu pycontribs/ubuntu:latest /bin/bash
+```
+
+
+
 4. Проведите запуск playbook на окружении из `prod.yml`. Зафиксируйте полученные значения `some_fact` для каждого из `managed host`.
 5. Добавьте факты в `group_vars` каждой из групп хостов так, чтобы для `some_fact` получились значения: для `deb` — `deb default fact`, для `el` — `el default fact`.
 6.  Повторите запуск playbook на окружении `prod.yml`. Убедитесь, что выдаются корректные значения для всех хостов.
