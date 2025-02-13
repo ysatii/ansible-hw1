@@ -14,7 +14,7 @@
 ## Задания 1.
  Попробуйте запустить playbook на окружении из `test.yml`, зафиксируйте значение, которое имеет факт `some_fact` для указанного хоста при выполнении playbook.
 
-## Решение 1
+## Решение 1.
 листинг inventory/test.yml
 ```
 ---
@@ -32,8 +32,26 @@ ansible-playbook ./site.yml -i inventory/test.yml
 
  ![рис 1](https://github.com/ysatii/ansible-hw1/blob/main/img/img_ansble1.jpg)  
 
+ *some_fact: 12* в  файле     "playbook/group_vars/all/examp.yml"
 
-2. Найдите файл с переменными (group_vars), в котором задаётся найденное в первом пункте значение, и поменяйте его на `all default fact`.
+## Задания 2.
+ Найдите файл с переменными (group_vars), в котором задаётся найденное в первом пункте значение, и поменяйте его на `all default fact`.
+
+
+## Решение 2.
+листинг "playbook/group_vars/all/examp.yml"
+```
+ some_fact: all default fact
+```
+
+команда для запуска 
+```sh
+ansible-playbook ./site.yml -i inventory/test.yml
+```  
+
+ ![рис 2](https://github.com/ysatii/ansible-hw1/blob/main/img/img_ansble2.jpg)  
+
+
 3. Воспользуйтесь подготовленным (используется `docker`) или создайте собственное окружение для проведения дальнейших испытаний.
 4. Проведите запуск playbook на окружении из `prod.yml`. Зафиксируйте полученные значения `some_fact` для каждого из `managed host`.
 5. Добавьте факты в `group_vars` каждой из групп хостов так, чтобы для `some_fact` получились значения: для `deb` — `deb default fact`, для `el` — `el default fact`.
