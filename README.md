@@ -27,7 +27,10 @@
 команда для запуска 
 ```sh
 ansible-playbook ./site.yml -i inventory/test.yml
-```
+```  
+
+
+ ![рис 1](https://github.com/ysatii/ansible-hw1/blob/main/img/img_ansble1.jpg)  
 
 
 2. Найдите файл с переменными (group_vars), в котором задаётся найденное в первом пункте значение, и поменяйте его на `all default fact`.
