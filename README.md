@@ -52,8 +52,10 @@ ansible-playbook ./site.yml -i inventory/test.yml
  ![рис 2](https://github.com/ysatii/ansible-hw1/blob/main/img/img_ansble2.jpg)  
 
 
-3. Воспользуйтесь подготовленным (используется `docker`) или создайте собственное окружение для проведения дальнейших испытаний.
+## Задание 3. 
+Воспользуйтесь подготовленным (используется `docker`) или создайте собственное окружение для проведения дальнейших испытаний.
 
+## Решение 3.
 Запустить контейнер с CentOS 7
 ```
 docker run -dit --name centos7 pycontribs/centos:7 /bin/bash
@@ -64,9 +66,39 @@ docker run -dit --name centos7 pycontribs/centos:7 /bin/bash
 docker run -dit --name ubuntu pycontribs/ubuntu:latest /bin/bash
 ```
 
+проверить работоспособность контейнеров
+```
+docker ps -a
+```
+ ![рис 3](https://github.com/ysatii/ansible-hw1/blob/main/img/img_ansble3.jpg)  
+
+## Задание 4.
+ Проведите запуск playbook на окружении из `prod.yml`. Зафиксируйте полученные значения `some_fact` для каждого из `managed host`.
+
+## Решение 4.
+ команда для запуска 
+```sh
+ansible-playbook ./site.yml -i inventory/prod.yml
+```  
+листинг playbook/
+```
+  el:
+    hosts:
+      centos7:
+        ansible_connection: docker
+  deb:
+    hosts:
+      ubuntu:
+        ansible_connection: docker
+  local:
+    hosts:
+      localhost:
+        ansible_connection: local
+```  
+
+ ![рис 4](https://github.com/ysatii/ansible-hw1/blob/main/img/img_ansble4.jpg)  
 
 
-4. Проведите запуск playbook на окружении из `prod.yml`. Зафиксируйте полученные значения `some_fact` для каждого из `managed host`.
 5. Добавьте факты в `group_vars` каждой из групп хостов так, чтобы для `some_fact` получились значения: для `deb` — `deb default fact`, для `el` — `el default fact`.
 6.  Повторите запуск playbook на окружении `prod.yml`. Убедитесь, что выдаются корректные значения для всех хостов.
 7. При помощи `ansible-vault` зашифруйте факты в `group_vars/deb` и `group_vars/el` с паролем `netology`.
