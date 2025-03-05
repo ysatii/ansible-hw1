@@ -1,4 +1,4 @@
-# Домашнее задание к занятию 2 «Работа с Playbook» Мельник Юрий Александрович 
+# Домашнее задание к занятию 1 «Работа с Playbook» Мельник Юрий Александрович 
 
 ## Подготовка к выполнению
 
@@ -198,13 +198,14 @@ ansible-playbook -i inventory/prod.yml site.yml --ask-vault-pas
  Заполните `README.md` ответами на вопросы. Сделайте `git push` в ветку `master`. В ответе отправьте ссылку на ваш открытый репозиторий с изменённым `playbook` и заполненным `README.md`.
 
 ## Решение 12.
-ссылка на репозиторий! [репозиторий](https://github.com/ysatii/ansible-hw1/tree/main/code/mnt-homeworks/08-ansible-01-base/playbook) 
+ссылка на репозиторий [репозиторий](https://github.com/ysatii/ansible-hw1/tree/main/code/mnt-homeworks/08-ansible-01-base/playbook) 
 
 ## Задание 13. 
 Предоставьте скриншоты результатов запуска команд.
 
 ## Решение 13.
 Работа оформлена в полном объёме согласно тех задания.
+скриншоты [скриншоты](https://github.com/ysatii/ansible-hw1/tree/main/img)
 
 ## Необязательная часть
 
