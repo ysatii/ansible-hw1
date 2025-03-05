@@ -182,9 +182,18 @@ ansible-doc -t connection local
 
 ## Решение 10.
 
-  ![рис 1](https://github.com/ysatii/ansible-hw1/blob/main/img/img_ansble11.jpg) 
+![рис 11](https://github.com/ysatii/ansible-hw1/blob/main/img/img_ansble11.jpg) 
 
-11. Запустите playbook на окружении `prod.yml`. При запуске `ansible` должен запросить у вас пароль. Убедитесь, что факты `some_fact` для каждого из хостов определены из верных `group_vars`.
+## Задание 11.
+ Запустите playbook на окружении `prod.yml`. При запуске `ansible` должен запросить у вас пароль. Убедитесь, что факты `some_fact` для каждого из хостов определены из верных `group_vars`.
+
+## Решение 11.
+```
+ansible-playbook -i inventory/prod.yml site.yml --ask-vault-pas
+```
+![рис 12](https://github.com/ysatii/ansible-hw1/blob/main/img/img_ansble12.jpg) 
+
+
 12. Заполните `README.md` ответами на вопросы. Сделайте `git push` в ветку `master`. В ответе отправьте ссылку на ваш открытый репозиторий с изменённым `playbook` и заполненным `README.md`.
 13. Предоставьте скриншоты результатов запуска команд.
 
